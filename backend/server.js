@@ -7,6 +7,7 @@ const dotenv = require('dotenv');
 
 //import routes
 const categoryRoutes = require('./routes/api/v2/CategoryRouter');
+const brandRoutes = require('./routes/api/v2/BrandRouter');
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
 
 // Routes 
 app.use('/api/categories', categoryRoutes);
+app.use('/api/brands', brandRoutes);
 
 
 const PORT = process.env.PORT || 5000;
