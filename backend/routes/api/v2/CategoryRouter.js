@@ -6,5 +6,5 @@ const categoryController = require('../../../controllers/v2/CategoryController')
 
 router.get('/', categoryController.getAllCategories);
 
-module.exports = Router;
+module.exports = router;
 
