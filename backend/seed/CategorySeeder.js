@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 const { faker } = require('@faker-js/faker'); // Access faker via destructuring
-const Category = require('./models/Category'); // Assuming the Category model is in the models folder
-const { connectDB, disconnectDB } = require('../config/db');
-
-// MongoDB connection (config/db.js)
-connectDB();
+const Category = require('../models/Category'); // Assuming the Category model is in the models folder
 
 // Function to create fake categories
 async function seedCategories() {
@@ -22,15 +18,11 @@ async function seedCategories() {
 
         // Insert all categories at once for better performance
         await Category.insertMany(categories);
-
         console.log('Categories seeded successfully');
     } catch (err) {
         console.error('Error seeding categories:', err);
-    } finally {
-        // Use disconnectDB to close the connection
-        disconnectDB();
     }
 }
 
-// Run the seed function
-seedCategories();
+// Export the seedCategories function for use in other files
+module.exports = seedCategories;
