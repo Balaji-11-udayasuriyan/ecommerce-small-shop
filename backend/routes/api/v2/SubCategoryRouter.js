@@ -6,7 +6,7 @@ const subcategoryController = require('../../../controllers/v2/SubCategoryContro
 
 router.get('/', subcategoryController.getAllSubCategories);
 
-module.exports = router
+module.exports = router;
 
 
 
