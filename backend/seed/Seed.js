@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const seedCategories = require('./CategorySeeder'); // Import the seedCategories function
 const seedBrands = require('./BrandSeeder'); // Import the seedCategories function
+const seedSubCategories= require('./SubCategorySeeder'); // Import the seedCategories function
 
 const { connectDB, disconnectDB } = require('../config/db'); // Import database connection functions
 
@@ -18,6 +19,9 @@ async function runSeeders() {
         
         console.log('Seeding brands...');
         await seedBrands();  // Seed categories first
+
+        console.log('Seeding subcategories...');
+        await seedSubCategories();  // Seed subcategories first
 
     } catch (err) {
         console.error('Error during seeding:', err);
