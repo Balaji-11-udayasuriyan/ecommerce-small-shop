@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const { faker } = require('@faker-js/faker'); // Access faker via destructuring
 const Category = require('../models/Category'); // Assuming the Category model is in the models folder
 
