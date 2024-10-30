@@ -1,6 +1,6 @@
 const SubCategory = require('../../models/SubCategory');
 
-exports.getAllSubCategories = async (res, req) => {
+exports.getAllSubCategories = async (req, res) => {
 
     try{
 
@@ -11,8 +11,5 @@ exports.getAllSubCategories = async (res, req) => {
 
         res.status(500).json({error: err.message});
     }
-
-
-
 
 }
