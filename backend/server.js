@@ -7,6 +7,7 @@ const categoryRoutes = require('./routes/api/v2/CategoryRouter');
 const brandRoutes = require('./routes/api/v2/BrandRouter');
 const  subcategoryRoutes = require('./routes/api/v2/SubCategoryRouter');
 const  productRouter = require('./routes/api/v2/ProductRouter');
+const  cartRouter = require('./routes/api/v2/CartRouter');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use('/api/categories', categoryRoutes);
 app.use('/api/brands', brandRoutes);
 app.use('/api/subcategories',subcategoryRoutes);
 app.use('/api/products',productRouter);
+app.use('/api/carts',cartRouter);
 
 const PORT = process.env.PORT || 5000;
 const HOST = process.env.HOST || '0.0.0.0';
