@@ -61,4 +61,14 @@ const logout = async( req, res ) => {
    res.status(200).json({message: "User Logged out successfully "});
 };
 
+// const logout = (req, res) => {
+//     const token = req.header('Authorization')?.replace('Bearer ', '').trim();
+//     if (token) {
+//         tokenBlacklist.add(token); // Blacklist the token
+//         res.status(200).json({ message: 'Logged out successfully' });
+//     } else {
+//         res.status(400).json({ message: 'No token provided' });
+//     }
+// };
+
 module.exports = { register, login, logout };
