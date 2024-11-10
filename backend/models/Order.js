@@ -5,14 +5,8 @@ const OrderSchema = new mongoose.Schema({
 
     user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
 
-    items: [
-        {
-            product_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
-            quantity: { type: Number, required: true },
-            price: { type: Number, required: true }  // Price at the time of order
-        }
-
-    ],
+    // Referencing multiple OrderItems linked to this order
+    items: [{ type: mongoose.Schema.Types.ObjectId, ref: 'OrderItem' }],
 
     total_price: { type: Number, required: true },  // Calculated total price of the order
 
@@ -34,7 +28,7 @@ const OrderSchema = new mongoose.Schema({
 
     placed_at: { type: Date, default: Date.now }
 
-}, {timestamps: true});
+}, {timestamps: true}); 
 
 const Order = mongoose.model('Order', OrderSchema);
 
