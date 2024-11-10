@@ -1,5 +1,5 @@
-const Order = require('../models/Order');
-const OrderItem = require('../models/OrderItem');
+const Order = require('../../models/Order');
+const OrderItem = require('../../models/OrderItem');
 
 // Create a new order
 const createOrder = async (req, res) => {
@@ -41,7 +41,7 @@ const createOrder = async (req, res) => {
 };
 
 // Get all orders
-const getOrders = async (req, res) => {
+const getAllOrders = async (req, res) => {
     try {
         const orders = await Order.find()
             .populate('items')
@@ -66,7 +66,7 @@ const getOrderById = async (req, res) => {
 };
 
 // Update order status
-const updateOrderStatus = async (req, res) => {
+const updateOrder = async (req, res) => {
     try {
         const { status } = req.body;
         const order = await Order.findByIdAndUpdate(req.params.id, { status }, { new: true });
@@ -94,7 +94,8 @@ const deleteOrder = async (req, res) => {
 
 module.exports = {
     createOrder,
+    getAllOrders,
     getOrderById,
-    updateOrderStatus,
+    updateOrder,
     deleteOrder,
 };
