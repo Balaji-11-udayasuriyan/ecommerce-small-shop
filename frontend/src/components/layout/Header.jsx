@@ -54,7 +54,7 @@ const Header = () => {
                     <ul className="language-dropdown">
                       <li>
                         <a href="#">
-                          <img src="#" alt="" /> Français
+                          <img src="" alt="" /> Français
                         </a>
                       </li>
                       <li>
@@ -102,7 +102,7 @@ const Header = () => {
           <div className="header-wrap">
             <div className="logo logo-width-1">
               <a href="#">
-                <img src="#" alt="logo" />
+                <img src="frontend\imgs\theme\logo.svg" alt="logo" />
               </a>
             </div>
             <div className="header-right">
@@ -134,7 +134,7 @@ const Header = () => {
                       />
                       <span className="pro-count blue">3</span>
                     </a>
-                    <a href="#">
+                    <a href="frontend\imgs\theme\icons\icon-compare.svg">
                       <span className="lable ml-0">Compare</span>
                     </a>
                   </div>
