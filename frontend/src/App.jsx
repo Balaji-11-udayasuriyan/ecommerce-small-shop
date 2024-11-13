@@ -4,6 +4,7 @@ import AppLayout from './components/layout/AppLayout';
 import HomePage from './components/HomePage';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import ForgetPassword from './components/auth/ForgetPassword';
 
 function App() {
 
@@ -25,6 +26,8 @@ function App() {
                 <Route path ="/login" element={<Login/>} />
 
                 <Route path ="/register" element={<Register/>}/>
+
+                <Route path="/forgetpassword" element={<ForgetPassword/>} />
 
             </Routes>
 
