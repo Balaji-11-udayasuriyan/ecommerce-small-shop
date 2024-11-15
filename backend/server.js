@@ -1,6 +1,7 @@
 const express = require('express');
 const { connectDB, disconnectDB } = require('./config/db');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 // Import routes
 const categoryRoutes = require('./routes/api/v2/CategoryRouter');
@@ -11,6 +12,7 @@ const cartRouter = require('./routes/api/v2/CartRouter');
 const orderRouter = require('./routes/api/v2/OrderRouter');
 const authRouter = require('./routes/api/v2/AuthRouter');
 
+
 const app = express();
 
 // Initialize dotenv to access environment variables
@@ -20,6 +22,8 @@ dotenv.config();
 connectDB();
 
 app.use(express.json());
+
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('API is running...');
