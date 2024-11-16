@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState }  from "react";
 
 const Login = () =>{
+
+    const [randomNumbers, setRandomNumbers] = useState([8, 6, 7, 5]); // Initial numbers
+
+    const generateNumbers = () => {
+        const newNumbers = Array.from({ length: 4 }, () => Math.floor(1 + Math.random() * 9));
+        setRandomNumbers(newNumbers);
+    };
+
+    const classes = ['text-new', 'text-hot', 'text-sale', 'text-best'];
 
     return(
 
@@ -32,7 +41,7 @@ const Login = () =>{
                                                 <div class="padding_eight_all bg-white">
                                                     <div class="heading_s1">
                                                         <h1 class="mb-5">Login</h1>
-                                                        <p class="mb-30">Don't have an account? <a href="page-register.html">Create here</a></p>
+                                                        <p class="mb-30">Don't have an account? <a href="register.html">Create here</a></p>
                                                     </div>
                                                     <form method="post">
                                                         <div class="form-group">
@@ -41,17 +50,34 @@ const Login = () =>{
                                                         <div class="form-group">
                                                             <input required="" type="password" name="password" placeholder="Your password *" />
                                                         </div>
+
+                    {/*--------------------------------------security code generator-----------------------------------------------*/}
+                                                        
                                                         <div class="login_footer form-group">
-                                                            <div class="chek-form">
-                                                                <input type="text" required="" name="email" placeholder="Security code *" />
-                                                            </div>
-                                                            <span class="security-code">
-                                                                <b class="text-new">8</b>
-                                                                <b class="text-hot">6</b>
-                                                                <b class="text-sale">7</b>
-                                                                <b class="text-best">5</b>
-                                                            </span>
+                                                             <div class="chek-form">
+                                                            <input type="text" required="" name="email" placeholder="Security code *" />
                                                         </div>
+                                                        <span className="security-code">
+                                                             {randomNumbers.map((number, index) => (
+                                                                <b key={index} className={classes[index]}>
+                                                                    {number}
+                                                                </b>
+                                                            ))}
+                                                         </span> 
+                                                        </div>
+
+                    {/*-------------------------------------- generate number button ------------------------------------------ */}
+                                                        
+                                                        <button
+                                                            onClick={(event) => {
+                                                            event.preventDefault(); // Prevent navigation or default action
+                                                            generateNumbers(); // Call the function to generate numbers
+                                                            }}
+                                                            >
+                                                            Generate Numbers
+                                                        </button>
+
+                    {/*--------------------------------------------------------------------------------------------------------*/}
                                                         <div class="login_footer form-group mb-50">
                                                             <div class="chek-form">
                                                                 <div class="custome-checkbox">
