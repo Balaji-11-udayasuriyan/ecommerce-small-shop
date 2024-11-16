@@ -41,7 +41,7 @@ const Login = () =>{
                                                 <div class="padding_eight_all bg-white">
                                                     <div class="heading_s1">
                                                         <h1 class="mb-5">Login</h1>
-                                                        <p class="mb-30">Don't have an account? <a href="register.html">Create here</a></p>
+                                                        <p class="mb-30">Don't have an account? <a href="/register">Create here</a></p>
                                                     </div>
                                                     <form method="post">
                                                         <div class="form-group">
@@ -85,7 +85,8 @@ const Login = () =>{
                                                                     <label class="form-check-label" for="exampleCheckbox1"><span>Remember me</span></label>
                                                                 </div>
                                                             </div>
-                                                            <a class="text-muted" href="#">Forgot password?</a>
+                                                            <a class="text-muted" href="/forgetpassword">Forgot password?</a>
+                                                            <a class="text-muted" href="/resetpassword">Reset password?</a>
                                                         </div>
                                                         <div class="form-group">
                                                             <button type="submit" class="btn btn-heading btn-block hover-up" name="login">Log in</button>
