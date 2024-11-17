@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Register = () => {
 
+    const [randomNumbers, setRandomNumbers] = useState([8, 6, 7, 5]); // Initial numbers
+
+    const generateNumbers = () => {
+        const newNumbers = Array.from({ length: 4 }, () => Math.floor(1 + Math.random() * 9));
+        setRandomNumbers(newNumbers);
+    };
+
+    const classes = ['text-new', 'text-hot', 'text-sale', 'text-best'];
 
     return(
 
@@ -11,7 +19,7 @@ const Register = () => {
                 <div class="page-header breadcrumb-wrap">
                     <div class="container">
                         <div class="breadcrumb">
-                            <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                            <a href="/" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                             <span></span> Pages <span></span> My Account
                         </div>
                     </div>
@@ -26,7 +34,7 @@ const Register = () => {
                                             <div class="padding_eight_all bg-white">
                                                 <div class="heading_s1">
                                                     <h1 class="mb-5">Create an Account</h1>
-                                                    <p class="mb-30">Already have an account? <a href="page-login.html">Login</a></p>
+                                                    <p class="mb-30">Already have an account? <a href="/login">Login</a></p>
                                                 </div>
                                                 <form method="post">
                                                     <div class="form-group">
@@ -41,17 +49,35 @@ const Register = () => {
                                                     <div class="form-group">
                                                         <input required="" type="password" name="password" placeholder="Confirm password" />
                                                     </div>
+
+                     {/*--------------------------------------security code generator-----------------------------------------------*/}
+                                                        
                                                     <div class="login_footer form-group">
-                                                        <div class="chek-form">
+                                                             <div class="chek-form">
                                                             <input type="text" required="" name="email" placeholder="Security code *" />
                                                         </div>
-                                                        <span class="security-code">
-                                                            <b class="text-new">8</b>
-                                                            <b class="text-hot">6</b>
-                                                            <b class="text-sale">7</b>
-                                                            <b class="text-best">5</b>
-                                                        </span>
-                                                    </div>
+                                                        <span className="security-code">
+                                                             {randomNumbers.map((number, index) => (
+                                                                <b key={index} className={classes[index]}>
+                                                                    {number}
+                                                                </b>
+                                                            ))}
+                                                         </span> 
+                                                        </div>
+
+                    {/*-------------------------------------- generate number button ------------------------------------------ */}
+                                                        
+                                                       <button
+                                                            onClick={(event) => {
+                                                            event.preventDefault(); // Prevent navigation or default action
+                                                            generateNumbers(); // Call the function to generate numbers
+                                                            }}
+                                                            >
+                                                            Generate Numbers
+                                                        </button>
+
+                    {/*--------------------------------------------------------------------------------------------------------*/}
+                    
                                                     <div class="payment_option mb-50">
                                                         <div class="custome-radio">
                                                             <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3" checked="" />
