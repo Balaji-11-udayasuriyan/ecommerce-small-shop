@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ForgetPassword = () => {
+
+    const [randomNumbers, setRandomNumbers] = useState([8, 6, 7, 5]); // Initial numbers
+
+    const generateNumbers = () => {
+        const newNumbers = Array.from({ length: 4 }, () => Math.floor(1 + Math.random() * 9));
+        setRandomNumbers(newNumbers);
+    };
+
+    const classes = ['text-new', 'text-hot', 'text-sale', 'text-best'];
 
     return(
 
@@ -10,7 +19,7 @@ const ForgetPassword = () => {
                     <div class="page-header breadcrumb-wrap">
                         <div class="container">
                             <div class="breadcrumb">
-                                <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                                <a href="/" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                                 <span></span> Pages <span></span> My Account
                             </div>
                         </div>
@@ -30,17 +39,35 @@ const ForgetPassword = () => {
                                                 <div class="form-group">
                                                     <input type="text" required="" name="email" placeholder="Username or Email *" />
                                                 </div>
+                
+                     {/*--------------------------------------security code generator-----------------------------------------------*/}
+                                                        
                                                 <div class="login_footer form-group">
                                                     <div class="chek-form">
                                                         <input type="text" required="" name="email" placeholder="Security code *" />
                                                     </div>
-                                                    <span class="security-code">
-                                                        <b class="text-new">8</b>
-                                                        <b class="text-hot">6</b>
-                                                        <b class="text-sale">7</b>
-                                                        <b class="text-best">5</b>
-                                                    </span>
+                                                        <span className="security-code">
+                                                                { randomNumbers.map((number, index) => (
+                                                                    <b key={index} className={classes[index]}>
+                                                                        {number}
+                                                                    </b>
+                                                            ))}
+                                                        </span> 
                                                 </div>
+
+                    {/*-------------------------------------- generate number button ------------------------------------------ */}
+                                                <div class="form-group">
+                                                    <button
+                                                        class="btn btn-heading btn-block hover-up"
+                                                        onClick={(event) => {
+                                                        event.preventDefault(); // Prevent navigation or default action
+                                                        generateNumbers(); // Call the function to generate numbers
+                                                        }}
+                                                        >
+                                                        Generate Numbers
+                                                    </button>
+                                                </div>  
+                    {/*--------------------------------------------------------------------------------------------------------*/}
                                                 <div class="login_footer form-group mb-50">
                                                     <div class="chek-form">
                                                         <div class="custome-checkbox">
@@ -51,8 +78,11 @@ const ForgetPassword = () => {
                                                     <a class="text-muted" href="#">Learn more</a>
                                                 </div>
                                                 <div class="form-group">
-                                                    <button type="submit" class="btn btn-heading btn-block hover-up" name="login">Reset password</button>
-                                                </div>
+                                                    <button type="submit" class="btn btn-heading btn-block hover-up" name="login">Reset password</button>    
+                                                    <br />
+                                                    <button type="submit" class="btn btn-heading btn-block hover-up" name="login">back</button>
+                                                     </div>
+                                                
                                             </form>
                                         </div>
                                     </div>
