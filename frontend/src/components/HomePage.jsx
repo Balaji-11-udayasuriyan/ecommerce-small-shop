@@ -6,17 +6,20 @@ import DealOfTheDay from "./slider/DealOfTheDay";
 const HomePage = () => {
   return (
     <div>
-      {/* Popular Products Section */}
+      
+      {/* Popular Products  */}
       
         <PopularProduct />
      
 
-      {/* Daily Best Sells Section */}
+      {/* Daily Best Sells  */}
 
         <DailyBestSells />
-     
 
-<DealOfTheDay/>      
+     {/* Deal of the Day  */}
+
+        <DealOfTheDay/> 
+
    </div>
   );
 };
