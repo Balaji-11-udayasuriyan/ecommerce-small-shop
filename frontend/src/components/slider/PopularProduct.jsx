@@ -3,16 +3,19 @@ import React from "react";
 const PopularProduct = () => {
 
     return(
-    
 
-      <div className="row">
-        <section class="product-tabs section-padding position-relative">
-          <div class="container">
-              <div class="section-title style-2 wow animate__animated animate__fadeIn">
-                  <h3>Popular Products</h3>
+        <section className="product-tabs section-padding position-relative">
+          <div className="container">
+              <div className="section-title style-2 wow animate__animated animate__fadeIn">
+                <div className="title">
+                  <h3>Popular Product</h3>
+                </div>
+              </div>
+              
+              <div className="row">
 
                   {/* Product 1 */}
-                  
+
                   <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                     <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".3s">
                       <div className="product-img-action-wrap">
@@ -71,7 +74,7 @@ const PopularProduct = () => {
                   </div>
 
                   {/* Product 2 */}
-
+                  
                   <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                     <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".3s">
                       <div className="product-img-action-wrap">
@@ -129,15 +132,15 @@ const PopularProduct = () => {
                     </div>
                   </div>
 
-                  {/* Product 2 */}
+                  {/* Product 3 */}
 
                   <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                     <div className="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".3s">
                       <div className="product-img-action-wrap">
                         <div className="product-img product-img-zoom">
                           <a href="shop-product-right.html">
-                            <img className="default-img" src="frontend/imgs/shop/product-4-1.jpg" alt="Product" />
-                            <img className="hover-img" src="frontend/imgs/shop/product-4-2.jpg" alt="Product hover" />
+                            <img className="default-img" src="frontend/imgs/shop/product-5-1.jpg" alt="Product" />
+                            <img className="hover-img" src="frontend/imgs/shop/product-5-2.jpg" alt="Product hover" />
                           </a>
                         </div>
                         <div className="product-action-1">
@@ -160,13 +163,13 @@ const PopularProduct = () => {
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Healthy Chips - Sea Salt & Vinegar</a>
+                          <a href="shop-product-right.html">Healthy Chips - BBQ</a>
                         </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
-                            <div className="product-rating" style={{ width: '90%' }}></div>
+                            <div className="product-rating" style={{ width: '80%' }}></div>
                           </div>
-                          <span className="font-small ml-5 text-muted"> (4.5)</span>
+                          <span className="font-small ml-5 text-muted"> (4.1)</span>
                         </div>
                         <div>
                           <span className="font-small text-muted">
@@ -175,8 +178,8 @@ const PopularProduct = () => {
                         </div>
                         <div className="product-card-bottom">
                           <div className="product-price">
-                            <span>$35.99</span>
-                            <span className="old-price">$40.0</span>
+                            <span>$32.85</span>
+                            <span className="old-price">$38.0</span>
                           </div>
                           <div className="add-cart">
                             <a className="add" href="shop-cart.html">
@@ -186,15 +189,11 @@ const PopularProduct = () => {
                         </div>
                       </div>
                     </div>
-                  </div>                 
-                
-
-                </div>
-                </div>
+                  </div>
+              </div>
+          </div>
         </section>
-      </div>
-
     );
-};
+}
 
 export default PopularProduct;
