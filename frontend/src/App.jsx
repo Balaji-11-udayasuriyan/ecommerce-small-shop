@@ -7,6 +7,7 @@ import Register from './components/auth/Register';
 import ForgetPassword from './components/auth/ForgetPassword';
 import ResetPassword from './components/auth/ResetPassword';
 import About from './components/AboutPage';
+import Contact from './components/Contact';
 
 function App() {
 
@@ -34,6 +35,10 @@ function App() {
                 <Route path="/resetpassword" element = {<ResetPassword/>} />
 
                 <Route path='/about' element= {<About/>} />
+
+                {/* contact route */}
+
+                <Route path = "/contact" element = {<Contact/>} />
 
             </Routes>
 
